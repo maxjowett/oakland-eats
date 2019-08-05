@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
+import restaurants from './data';
 import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
@@ -11,14 +13,22 @@ const config = {
 
 class App extends Component {
   state = {
+    restaurants,
     data: null
   }
 
+  getRestaurant = () => {
+    let i = Math.floor(Math.random() * this.state.restaurants.length);
+    console.log(`Random Oakland spot chosen : ${this.state.restaurants[i]}`)
+    return this.state.restaurants[i];
+  }
 
-  callYelp = () => {
-    axios.get('http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=oakland', config)
+  callYelp = restaurant => {
+    axios.get(`http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${this.getRestaurant()}&location=oakland`, config)
     .then((response) => console.log(response));
   }
+
+
 
   componentDidMount() {
     this.callYelp()
