@@ -6,6 +6,7 @@ import restaurants from './data';
 import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
+import Restaurant from './components/Restaurant/Restaurant';
 
 const config = {
   headers: {'Authorization': `Bearer ${process.env.REACT_APP_YELP_API_KEY}`}
@@ -14,7 +15,8 @@ const config = {
 class App extends Component {
   state = {
     restaurants,
-    data: null
+    data: null,
+    spotlight: null
   }
 
   getRestaurant = () => {
@@ -25,9 +27,13 @@ class App extends Component {
 
   callYelp = restaurant => {
     axios.get(`http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${this.getRestaurant()}&location=oakland`, config)
-    .then((response) => console.log(response));
+    .then((response) => {
+      if (response.status === 200) {
+        const { data } = response;
+        this.setState({ spotlight: data })
+      }
+    });
   }
-
 
 
   componentDidMount() {
@@ -35,10 +41,10 @@ class App extends Component {
   }
 
   render() {
-    console.log(process.env.REACT_APP_YELP_API_KEY)
     return (
       <div className="App">
         <Navbar />
+        <Restaurant spotlight={this.state.spotlight} />
       </div>
     );
   }
