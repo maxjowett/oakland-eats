@@ -5,7 +5,7 @@ class Restaurant extends Component {
 
   render() {
     console.log(this.props.spotlight)
-    const { name, image_url, is_closed, url, location, categories, display_phone, price, rating, review_counts } = this.props.spotlight
+    const { name, image_url, is_closed, url, location, categories, display_phone, price, rating, review_count } = this.props.spotlight
     return (
       <div className="spotlight">
         <div className="container">
@@ -14,7 +14,7 @@ class Restaurant extends Component {
           <h3>{location.city}, {location.zip_code}</h3>
           <div className="spotlight__details">
           <h3>{price}</h3>
-          <h3>{rating}</h3>
+          <h3>Rated {rating}/5 with {review_count} reviews on Yelp</h3>
           </div>
         </div>
 

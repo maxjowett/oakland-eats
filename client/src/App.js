@@ -47,6 +47,9 @@ class App extends Component {
         {
           this.state.spotlight && <Restaurant spotlight={this.state.spotlight} />
         }
+        <div className="container">
+         <button onClick={this.callYelp}>Next spot</button>
+        </div>
       </div>
     );
   }

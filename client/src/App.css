@@ -4,6 +4,13 @@
   font-weight: normal;
 }
 
+button {
+  background-color: #cc4641;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+}
+
 .App {
   height: 100vh;
   background-image: url('./assets/images/coo-artwork-tree.png');
