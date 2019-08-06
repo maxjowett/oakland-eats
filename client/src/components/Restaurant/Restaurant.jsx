@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
+import './Restaurant.css';
 
 class Restaurant extends Component {
 
-  render(props) {
-    console.log(this.props)
+  render() {
+    console.log(this.props.spotlight)
+    const { name, image_url, is_closed, url, location, categories, display_phone, price, rating, review_counts } = this.props.spotlight
     return (
-    <div>
-      <h1>Spotlight</h1>
-      {
-        this.props.spotlight && <h2>Got data!</h2>
-      }
-    </div>
+      <div className="spotlight">
+        <div className="container">
+          <h1 className="spotlight__name">{name}</h1>
+          <h3>{location.address1}</h3>
+          <h3>{location.city}, {location.zip_code}</h3>
+          <div className="spotlight__details">
+          <h3>{price}</h3>
+          <h3>{rating}</h3>
+          </div>
+        </div>
+
+      </div>
     );
   }
 }

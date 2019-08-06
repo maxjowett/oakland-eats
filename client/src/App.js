@@ -30,7 +30,7 @@ class App extends Component {
     .then((response) => {
       if (response.status === 200) {
         const { data } = response;
-        this.setState({ spotlight: data })
+        this.setState({ spotlight: data.businesses[0] })
       }
     });
   }
@@ -44,7 +44,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Restaurant spotlight={this.state.spotlight} />
+        {
+          this.state.spotlight && <Restaurant spotlight={this.state.spotlight} />
+        }
       </div>
     );
   }

@@ -2,8 +2,10 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="container">
+      <div className="navbar">
       <h1>Oakland Eats</h1>
+      </div>
     </div>
   );
 }
