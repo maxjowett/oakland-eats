@@ -44,9 +44,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        {
-          this.state.spotlight && <Restaurant spotlight={this.state.spotlight} />
-        }
+        { this.state.spotlight && <Restaurant spotlight={this.state.spotlight} /> }
         <div className="container">
          <button onClick={this.callYelp}>Next spot</button>
         </div>
