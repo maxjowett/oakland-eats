@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
 import restaurants from './data';
 import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
 import Restaurant from './components/Restaurant/Restaurant';
+
+import { css } from '@emotion/core';
+// First way to import
+import { BounceLoader } from 'react-spinners';
+
+const override = css`
+    display: block;
+    margin-top: 64px;
+    border-color: #607A52;
+`;
+
 
 const config = {
   headers: {'Authorization': `Bearer ${process.env.REACT_APP_YELP_API_KEY}`}
@@ -16,7 +26,8 @@ class App extends Component {
   state = {
     restaurants,
     data: null,
-    spotlight: null
+    spotlight: null,
+    loading: true
   }
 
   getRestaurant = () => {
@@ -30,11 +41,13 @@ class App extends Component {
     .then((response) => {
       if (response.status === 200) {
         const { data } = response;
-        this.setState({ spotlight: data.businesses[0] })
+        this.setState({
+          spotlight: data.businesses[0],
+          loading: false
+        })
       }
     });
   }
-
 
   componentDidMount() {
     this.callYelp()
@@ -44,8 +57,18 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        { this.state.spotlight && <Restaurant spotlight={this.state.spotlight} /> }
         <div className="container">
+          {
+            this.state.loading
+            ? <BounceLoader
+            css={override}
+            sizeUnit={"px"}
+            size={64}
+            color={'#316636'}
+            loading={this.props.loading}
+          />
+          : <Restaurant spotlight={this.state.spotlight} />
+          }
          <button onClick={this.callYelp}>Next spot</button>
         </div>
       </div>
