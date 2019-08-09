@@ -15,6 +15,7 @@ class Restaurant extends Component {
           <h3>{price}</h3>
           <h3>Rated {rating}/5 with {review_count} reviews on Yelp</h3>
           </div>
+          <button onClick={this.props.callYelp}>Next spot</button>
         </div>
       </div>
     );

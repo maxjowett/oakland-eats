@@ -6,6 +6,7 @@ import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
 import Restaurant from './components/Restaurant/Restaurant';
+import GoogleMap from './components/GoogleMap/GoogleMap';
 
 import { css } from '@emotion/core';
 // First way to import
@@ -14,6 +15,7 @@ import { BounceLoader } from 'react-spinners';
 const override = css`
     display: block;
     margin-top: 64px;
+    margin-bottom: 64px;
     border-color: #607A52;
 `;
 
@@ -27,7 +29,9 @@ class App extends Component {
     restaurants,
     data: null,
     spotlight: null,
-    loading: true
+    loading: true,
+    lat: '',
+    lng: ''
   }
 
   getRestaurant = () => {
@@ -37,12 +41,15 @@ class App extends Component {
   }
 
   callYelp = restaurant => {
+    this.setState({ loading: true })
     axios.get(`http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${this.getRestaurant()}&location=oakland`, config)
     .then((response) => {
       if (response.status === 200) {
         const { data } = response;
         this.setState({
           spotlight: data.businesses[0],
+          lat: data.businesses[0].coordinates.latitude,
+          lng: data.businesses[0].coordinates.longitude,
           loading: false
         })
       }
@@ -67,9 +74,19 @@ class App extends Component {
             color={'#316636'}
             loading={this.props.loading}
           />
-          : <Restaurant spotlight={this.state.spotlight} />
+          : <Restaurant
+              spotlight={this.state.spotlight}
+              callYelp={this.callYelp}  
+            />
           }
-         <button onClick={this.callYelp}>Next spot</button>
+          {
+            this.state.lat &&
+          <GoogleMap
+            lat={this.state.lat}
+            lng={this.state.lng}
+          />
+          }
+         {/* <button onClick={this.callYelp}>Next spot</button> */}
         </div>
       </div>
     );
