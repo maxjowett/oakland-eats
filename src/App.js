@@ -12,7 +12,8 @@ const config = {
 };
 class App extends Component {
   state = {
-    restaurants
+    data: restaurants,
+    restaurants: null
   };
 
   componentDidMount() {
@@ -26,7 +27,10 @@ class App extends Component {
         config
       )
       .then(response => {
-        console.log(response);
+        if (response.status === 200) {
+          const { data } = response;
+          this.setState({ restaurants: data });
+        }
       });
   };
 
@@ -35,7 +39,7 @@ class App extends Component {
     return (
       <div className="App">
         <Side />
-        <Main />
+        <Main restaurants={this.state.restaurants} />
       </div>
     );
   }
