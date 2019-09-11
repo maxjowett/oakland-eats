@@ -1,5 +1,12 @@
 .side {
-  background-color: #343434;
   height: 100vh;
   overflow: auto;
+}
+
+.restaurant {
+  padding-left: 16px;
+}
+.restaurant__title {
+  font-family: 'Tiempos Fine Bold';
+  font-size: 32px;
 }
