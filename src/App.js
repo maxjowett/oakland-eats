@@ -28,8 +28,8 @@ class App extends Component {
       )
       .then(response => {
         if (response.status === 200) {
-          const { data } = response;
-          this.setState({ restaurants: data });
+          const { businesses } = response.data;
+          this.setState({ restaurants: businesses });
         }
       });
   };
@@ -38,7 +38,7 @@ class App extends Component {
     console.log(this.state.restaurants);
     return (
       <div className="App">
-        <Side />
+        <Side restaurants={this.state.restaurants} />
         <Main restaurants={this.state.restaurants} />
       </div>
     );
