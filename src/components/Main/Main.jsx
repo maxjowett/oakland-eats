@@ -8,8 +8,8 @@ const key = process.env.REACT_APP_GOOGLE_API_KEY;
 class Main extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 37.8044,
+      lng: -122.2712
     },
     zoom: 11
   };
@@ -23,8 +23,8 @@ class Main extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}>
           <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
+            lat={37.8044}
+            lng={-122.2712}
             text="My Marker"
           />
         </GoogleMapReact>
