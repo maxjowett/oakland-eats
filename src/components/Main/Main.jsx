@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import MarkerIcon from '../../assets/iconfinder_map-marker_299087.png';
 import customStyles from './style.js';
-const Marker = () => <img src={MarkerIcon} />;
+// const Marker = () => <img src={MarkerIcon} />;
+import Marker from './Marker/Marker.jsx';
 
 const key = process.env.REACT_APP_GOOGLE_API_KEY;
 
