@@ -23,7 +23,7 @@ class App extends Component {
   callYelp = () => {
     axios
       .get(
-        `http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?t=fentons&location=oakland`,
+        `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?t=fentons&location=oakland`,
         config
       )
       .then(response => {
