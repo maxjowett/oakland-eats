@@ -17,12 +17,24 @@ class Main extends Component {
 
   renderMarkers = () => {
     console.log(this.props.restaurants);
-    return this.props.restaurants.map(r => (
+    return this.props.restaurants.map((r, idx) => (
       <Marker
+        key={idx}
         lat={r.coordinates.latitude}
         lng={r.coordinates.longitude}
+        hover={() => console.log('Yay!')}
       />
     ));
+  };
+
+  onChildMouseEnter = key => {
+    console.log('Something is hovered!');
+    console.log(this.props.restaurants[key]);
+  };
+
+  onChildClick = e => {
+    console.log('Clicked!');
+    console.log(e);
   };
 
   render() {
@@ -34,7 +46,10 @@ class Main extends Component {
             bootstrapURLKeys={{ key }}
             defaultCenter={this.props.center}
             defaultZoom={this.props.zoom}
-            options={{ styles: [...customStyles] }}>
+            options={{ styles: [...customStyles] }}
+            onChildMouseEnter={this.onChildMouseEnter}
+            onChildClick={this.onChildClick}
+            hoverSize={20}>
             {this.renderMarkers()}
           </GoogleMapReact>
         )}
