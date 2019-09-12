@@ -12,35 +12,32 @@ class Main extends Component {
       lat: 37.8044,
       lng: -122.2712
     },
-    zoom: 11
+    zoom: 13
+  };
+
+  renderMarkers = () => {
+    console.log(this.props.restaurants);
+    return this.props.restaurants.map(r => (
+      <Marker
+        lat={r.coordinates.latitude}
+        lng={r.coordinates.longitude}
+      />
+    ));
   };
 
   render() {
-    console.log(this.props.restaurants);
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-          options={{ styles: [...customStyles] }}>
-          <Marker
-            lat={37.9044}
-            lng={-122.2712}
-            text="My Marker"
-          />
-          <Marker
-            lat={37.8094}
-            lng={-122.2712}
-            text="My Marker"
-          />
-          <Marker
-            lat={37.8044}
-            lng={-122.2712}
-            text="My Marker"
-          />
-        </GoogleMapReact>
+        {this.props.restaurants && (
+          <GoogleMapReact
+            bootstrapURLKeys={{ key }}
+            defaultCenter={this.props.center}
+            defaultZoom={this.props.zoom}
+            options={{ styles: [...customStyles] }}>
+            {this.renderMarkers()}
+          </GoogleMapReact>
+        )}
       </div>
     );
   }
