@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import MarkerIcon from '../../../assets/iconfinder_map-marker_299087.png';
 import './Marker.css';
 
@@ -36,13 +37,11 @@ const Marker = props => {
       ? greatPlaceStyle
       : greatPlaceStyleHover;
   return (
-    <div
-      className="hint hint--html hint--info hint--top"
-      style={style}>
-      <div>{props.restaurant.id}</div>
-      <div style={{ width: 80 }} className="hint__content">
-        Сlick me
-      </div>
+    <div>
+      <a data-tip={props.id} data-event="click focus">
+        <img src={MarkerIcon} />
+      </a>
+      <ReactTooltip globalEventOff="click" />
     </div>
   );
 };
