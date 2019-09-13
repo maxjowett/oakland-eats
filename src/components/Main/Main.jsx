@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import ReactModal from 'react-modal';
 import customStyles from './style.js';
 import Marker from './Marker/Marker.jsx';
-
+import './Main.css';
 const key = process.env.REACT_APP_GOOGLE_API_KEY;
 
 class Main extends Component {
   state = {
     isHovered: '',
-    isClicked: ''
+    isClicked: '',
+    isModalOpen: false
   };
 
   static defaultProps = {
@@ -46,12 +48,27 @@ class Main extends Component {
     this.setState({ isClicked: this.props.restaurants[key] });
     console.log('Clicked!');
     console.log(key);
+    this.handleOpenModal();
+  };
+
+  handleOpenModal = () => {
+    this.setState({ isModalOpen: true });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ isModalOpen: false });
   };
 
   render() {
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
+        <ReactModal
+          className="modal"
+          isOpen={this.state.isModalOpen}
+          contentLabel="yo!">
+          <h1>Max</h1>
+        </ReactModal>
         {this.props.restaurants && (
           <GoogleMapReact
             bootstrapURLKeys={{ key }}
