@@ -6,6 +6,10 @@ import Marker from './Marker/Marker.jsx';
 const key = process.env.REACT_APP_GOOGLE_API_KEY;
 
 class Main extends Component {
+  state = {
+    isHovered: ''
+  };
+
   static defaultProps = {
     center: {
       lat: 37.8044,
@@ -28,11 +32,12 @@ class Main extends Component {
   onChildMouseEnter = key => {
     console.log('Something is hovered!');
     console.log(this.props.restaurants[key]);
+    this.setState({ isHovered: this.props.restaurants[key] });
   };
 
-  onChildClick = e => {
+  onChildClick = key => {
     console.log('Clicked!');
-    console.log(e);
+    console.log(key);
   };
 
   render() {
