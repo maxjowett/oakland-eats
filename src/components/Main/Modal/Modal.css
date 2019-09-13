@@ -1,5 +1,20 @@
 .modal {
+  background-image: linear-gradient(
+      to bottom left,
+      transparent 0%,
+      #fafafa 40%
+    ),
+    repeating-linear-gradient(
+      135.5deg,
+      transparent 1px,
+      #fafafa 2px,
+      #fafafa 18px,
+      transparent 19px,
+      transparent 20px
+    ),
+    linear-gradient(38.5deg, #f1292a, #d93299);
   position: absolute;
+  border: black solid 2px;
   border-radius: 8px;
   top: 50%;
   left: 50%;
@@ -21,6 +36,10 @@
 .modal__category {
   margin-top: 4px;
   margin-bottom: 32px;
+}
+
+.modal__info-left {
+  align-self: center;
 }
 
 .modal__info {
