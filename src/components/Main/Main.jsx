@@ -3,7 +3,8 @@ import GoogleMapReact from 'google-map-react';
 import ReactModal from 'react-modal';
 import customStyles from './style.js';
 import Marker from './Marker/Marker.jsx';
-import './Main.css';
+import Modal from './Modal/Modal.jsx';
+import './Modal/Modal.css';
 const key = process.env.REACT_APP_GOOGLE_API_KEY;
 
 class Main extends Component {
@@ -66,8 +67,9 @@ class Main extends Component {
         <ReactModal
           className="modal"
           isOpen={this.state.isModalOpen}
+          onRequestClose={this.handleCloseModal}
           contentLabel="yo!">
-          <h1>Max</h1>
+          <Modal isClicked={this.state.isClicked} />
         </ReactModal>
         {this.props.restaurants && (
           <GoogleMapReact
