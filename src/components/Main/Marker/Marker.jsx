@@ -6,7 +6,7 @@ const Marker = props => {
   return (
     <p
       className={
-        props.isClicked.id !== props.id ? 'nah' : 'hovered'
+        props.isHovered !== props.id ? 'nah' : 'hovered'
       }>
       Marker
     </p>
