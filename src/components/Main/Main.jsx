@@ -7,7 +7,8 @@ const key = process.env.REACT_APP_GOOGLE_API_KEY;
 
 class Main extends Component {
   state = {
-    isHovered: ''
+    isHovered: '',
+    isClicked: ''
   };
 
   static defaultProps = {
@@ -19,23 +20,29 @@ class Main extends Component {
   };
 
   renderMarkers = () => {
-    console.log(this.props.restaurants);
     return this.props.restaurants.map((r, idx) => (
       <Marker
         key={idx}
+        id={r.id}
         lat={r.coordinates.latitude}
         lng={r.coordinates.longitude}
+        isHovered={this.state.isHovered}
+        isClicked={this.state.isClicked}
       />
     ));
   };
 
   onChildMouseEnter = key => {
-    console.log('Something is hovered!');
-    console.log(this.props.restaurants[key]);
-    this.setState({ isHovered: this.props.restaurants[key] });
+    this.setState({ isHovered: this.props.restaurants[key].id });
+    console.log(this.state.isHovered);
+  };
+
+  onChildMouseLeave = key => {
+    this.setState({ isHovered: null });
   };
 
   onChildClick = key => {
+    this.setState({ isClicked: this.props.restaurants[key] });
     console.log('Clicked!');
     console.log(key);
   };
@@ -51,6 +58,7 @@ class Main extends Component {
             defaultZoom={this.props.zoom}
             options={{ styles: [...customStyles] }}
             onChildMouseEnter={this.onChildMouseEnter}
+            onChildMouseLeave={this.onChildMouseLeave}
             onChildClick={this.onChildClick}
             hoverSize={20}>
             {this.renderMarkers()}
