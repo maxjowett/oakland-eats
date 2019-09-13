@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import MarkerIcon from '../../../assets/iconfinder_map-marker_299087.png';
+import Icon from '../../../assets/pushpin_1f4cc.png';
 import './Marker.css';
 import './Tooltip.css';
 
@@ -40,7 +41,7 @@ const Marker = props => {
   return (
     <div>
       <h1 data-tip={props.restaurant.name}>
-        <img src={MarkerIcon} />
+        <img src={Icon} height="32" />
       </h1>
       <ReactTooltip
         html={true}
