@@ -1,17 +1,18 @@
 @font-face {
   font-family: 'Tiempos Fine Bold';
   src: local('Tiempos Fine Bold'),
-    url(./assets/fonts/TiemposFineBold.otf) format('otf');
+    url(./assets/fonts/TiemposFineBold.otf) format('opentype');
 }
 
 @font-face {
   font-family: 'Tiempos Fine Semibold';
   src: local('Tiempos Fine Semibold'),
-    url(./assets/fonts/TiemposFineSemibold.otf) format('otf');
+    url(./assets/fonts/TiemposFineSemibold.otf)
+      format('opentype');
 }
 
 @font-face {
   font-family: 'SuisseIntl-Book';
   src: local('SuisseIntl-Book'),
-    url(./assets/fonts/SuisseIntl-Book.otf) format('otf');
+    url(./assets/fonts/SuisseIntl-Book.otf) format('opentype');
 }
