@@ -21,12 +21,13 @@
   right: auto;
   bottom: auto;
   outline: none;
-  max-width: 560px;
+  max-width: 480px;
   width: 100%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 32px;
 }
+
 .modal__title {
   font-family: 'Tiempos Fine Bold';
   margin-bottom: 0;
@@ -40,6 +41,10 @@
 
 .modal__info-left {
   align-self: center;
+}
+
+.modal__info-right {
+  justify-self: end;
 }
 
 .modal__info {
@@ -62,5 +67,11 @@
 .modal__rating {
   font-family: 'Tiempos Fine Semibold';
   font-size: 24px;
-  text-align: center;
+  padding-top: 16px;
+}
+
+a {
+  font-family: inherit;
+  text-decoration-style: dotted;
+  color: #c41200;
 }
