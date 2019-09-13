@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './assets/fonts/SuisseIntl-Book.otf';
+import './assets/fonts/TiemposFineBold.otf';
+import './assets/fonts/TiemposFineSemibold.otf';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
