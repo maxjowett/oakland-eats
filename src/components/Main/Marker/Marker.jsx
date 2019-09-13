@@ -2,6 +2,7 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import MarkerIcon from '../../../assets/iconfinder_map-marker_299087.png';
 import './Marker.css';
+import './Tooltip.css';
 
 const K_SIZE = 40;
 
@@ -38,10 +39,14 @@ const Marker = props => {
       : greatPlaceStyleHover;
   return (
     <div>
-      <a data-tip={props.id} data-event="click focus">
+      <h1 data-tip={props.restaurant.name}>
         <img src={MarkerIcon} />
-      </a>
-      <ReactTooltip globalEventOff="click" />
+      </h1>
+      <ReactTooltip
+        html={true}
+        globalEventOff="click"
+        className="tooltip"
+      />
     </div>
   );
 };
