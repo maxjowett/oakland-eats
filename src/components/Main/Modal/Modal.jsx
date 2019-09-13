@@ -11,9 +11,15 @@ const Modal = props => {
       </div>
       <div className="modal__info">
         <div className="modal__info-left">
-          <h2>{props.isClicked.location.address1}</h2>
-          <h2>{props.isClicked.location.city}, CA</h2>
-          <h2>{props.isClicked.display_phone}</h2>
+          <h2 className="modal__contact">
+            {props.isClicked.location.address1}
+          </h2>
+          <h2 className="modal__contact">
+            {props.isClicked.location.city}, CA
+          </h2>
+          <h2 className="modal__contact">
+            {props.isClicked.display_phone}
+          </h2>
         </div>
         <div className="modal__info-right">
           <img
@@ -23,7 +29,7 @@ const Modal = props => {
         </div>
       </div>
       <div>
-        <h1>
+        <h1 className="modal__rating">
           Rated {props.isClicked.rating} stars with{' '}
           {props.isClicked.review_count} reviews on Yelp
         </h1>

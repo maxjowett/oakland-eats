@@ -6,16 +6,21 @@
   right: auto;
   bottom: auto;
   outline: none;
-  max-width: 480px;
+  max-width: 560px;
   width: 100%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 32px;
 }
 .modal__title {
+  font-family: 'Tiempos Fine Bold';
+  margin-bottom: 0;
+  font-size: 38px;
 }
 
 .modal__category {
+  margin-top: 4px;
+  margin-bottom: 32px;
 }
 
 .modal__info {
@@ -24,9 +29,19 @@
 }
 
 .modal__contact {
+  font-family: 'Tiempos Fine Semibold';
+  margin-bottom: 0;
+  padding-bottom: 8px;
+  margin-top: 0;
 }
 
 .modal__img {
   max-width: 240px;
   width: 100%;
+}
+
+.modal__rating {
+  font-family: 'Tiempos Fine Semibold';
+  font-size: 24px;
+  text-align: center;
 }
