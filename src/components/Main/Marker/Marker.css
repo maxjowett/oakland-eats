@@ -1,3 +1,10 @@
-.hovered {
-  color: red;
+.marker {
+  cursor: pointer;
+}
+
+.marker__tooltip {
+  font-family: 'Tiempos Fine Bold';
+  font-size: 16px !important;
+  padding: 8px !important;
+  background-color: red !important;
 }
