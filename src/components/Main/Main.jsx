@@ -24,6 +24,7 @@ class Main extends Component {
       <Marker
         key={idx}
         id={r.id}
+        restaurant={r}
         lat={r.coordinates.latitude}
         lng={r.coordinates.longitude}
         isHovered={this.state.isHovered}
