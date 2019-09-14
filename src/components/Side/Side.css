@@ -7,25 +7,27 @@
   padding-left: 16px;
 }
 .restaurant__title {
-  font-family: 'Tiempos Fine Bold';
-  font-size: 32px;
+  font-family: 'Playfair Display';
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: 0.5px;
   margin-bottom: 0px;
 }
 
 .restaurant__category {
-  font-family: 'SuisseIntl-Book';
   font-size: 14px;
+  font-weight: normal;
   margin-top: 4px;
 }
 
 .restaurant__phone {
-  font-family: 'SuisseIntl-Book';
   font-size: 16px;
+  font-weight: normal;
   margin-bottom: 8px;
 }
 
 .restaurant__info {
-  font-family: 'SuisseIntl-Book';
   margin: 0;
   font-size: 16px;
+  font-weight: normal;
 }

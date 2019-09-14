@@ -35,7 +35,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.restaurants);
     return (
       <div className="App">
         <Side restaurants={this.state.restaurants} />

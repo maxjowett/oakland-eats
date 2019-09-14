@@ -29,7 +29,8 @@
 }
 
 .modal__title {
-  font-family: 'Tiempos Fine Bold';
+  font-family: 'Playfair Display';
+  font-weight: 900;
   margin-bottom: 0;
   font-size: 38px;
 }
@@ -53,7 +54,8 @@
 }
 
 .modal__contact {
-  font-family: 'Tiempos Fine Semibold';
+  font-family: 'Playfair Display';
+  font-weight: 700;
   margin-bottom: 0;
   padding-bottom: 8px;
   margin-top: 0;
@@ -65,7 +67,8 @@
 }
 
 .modal__rating {
-  font-family: 'Tiempos Fine Semibold';
+  font-family: 'Playfair Display';
+  font-weight: 700;
   font-size: 24px;
   padding-top: 16px;
 }

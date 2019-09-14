@@ -7,7 +7,7 @@ const Marker = props => {
   return (
     <div className="marker">
       <h1 data-tip={props.restaurant.name}>
-        <img src={Icon} height="32" />
+        <img src={Icon} alt="Map marker" height="32" />
       </h1>
       <ReactTooltip
         globalEventOff="click"

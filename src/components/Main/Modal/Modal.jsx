@@ -24,6 +24,7 @@ const Modal = props => {
         <div className="modal__info-right">
           <img
             className="modal__img"
+            alt="Restaurant"
             src={props.isClicked.image_url}
           />
         </div>

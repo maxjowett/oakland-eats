@@ -38,7 +38,6 @@ class Main extends Component {
 
   onChildMouseEnter = key => {
     this.setState({ isHovered: this.props.restaurants[key].id });
-    console.log(this.state.isHovered);
   };
 
   onChildMouseLeave = key => {
@@ -47,8 +46,6 @@ class Main extends Component {
 
   onChildClick = key => {
     this.setState({ isClicked: this.props.restaurants[key] });
-    console.log('Clicked!');
-    console.log(key);
     this.handleOpenModal();
   };
 
@@ -68,7 +65,7 @@ class Main extends Component {
           className="modal"
           isOpen={this.state.isModalOpen}
           onRequestClose={this.handleCloseModal}
-          contentLabel="yo!">
+          ariaHideApp={false}>
           <Modal isClicked={this.state.isClicked} />
         </ReactModal>
         {this.props.restaurants && (

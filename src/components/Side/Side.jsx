@@ -5,7 +5,7 @@ class Side extends Component {
   state = {};
   renderRestaurants = () => {
     return this.props.restaurants.map(restaurant => (
-      <div className="restaurant">
+      <div className="restaurant" key={restaurant.id}>
         <h2 className="restaurant__title">{restaurant.name}</h2>
         <h3 className="restaurant__category">
           {restaurant.categories[0].title}
