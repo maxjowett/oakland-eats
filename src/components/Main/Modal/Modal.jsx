@@ -33,7 +33,12 @@ const Modal = props => {
         <h1 className="modal__rating">
           Rated {props.isClicked.rating} stars with{' '}
           {props.isClicked.review_count} reviews on{' '}
-          <a href={props.isClicked.url}>Yelp</a>
+          <a
+            className="yelp"
+            href={props.isClicked.url}
+            target="_blank">
+            Yelp
+          </a>
         </h1>
       </div>
     </React.Fragment>

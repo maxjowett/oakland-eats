@@ -1,6 +1,6 @@
 .modal {
   position: absolute;
-  background-color: #333;
+  background-color: #fff;
   border: black solid 2px;
   border-radius: 8px;
   top: 50%;
@@ -12,13 +12,14 @@
   width: 100%;
   transform: translate(-50%, -50%);
   padding: 32px;
+  font-family: 'Fira Sans', serif;
 }
 
 .modal__title {
-  font-family: 'Playfair Display';
-  font-weight: 900;
   margin-bottom: 0;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 38px;
+  font-weight: bold;
 }
 
 .modal__category {
@@ -35,13 +36,11 @@
 }
 
 .modal__info {
-  z-index: 1111;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 .modal__contact {
-  font-family: 'Playfair Display';
   font-weight: 700;
   margin-bottom: 0;
   padding-bottom: 8px;
@@ -54,13 +53,11 @@
 }
 
 .modal__rating {
-  font-family: 'Playfair Display';
-  font-weight: 700;
-  font-size: 24px;
+  font-size: 22px;
   padding-top: 16px;
 }
 
-a {
+a.yelp {
   font-family: inherit;
   text-decoration-style: dotted;
   color: #c41200;
