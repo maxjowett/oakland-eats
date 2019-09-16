@@ -7,7 +7,10 @@ class Side extends Component {
     return this.props.restaurants.map(restaurant => (
       <div className="restaurant" key={restaurant.id}>
         <h2 className="restaurant__title">
-          <a href={restaurant.url} target="_blank">
+          <a
+            className="restaurant__a"
+            href={restaurant.url}
+            target="_blank">
             {restaurant.name}
           </a>
         </h2>
