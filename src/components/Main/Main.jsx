@@ -64,8 +64,7 @@ class Main extends Component {
         <ReactModal
           className="modal"
           isOpen={this.state.isModalOpen}
-          onRequestClose={this.handleCloseModal}
-          ariaHideApp={false}>
+          onRequestClose={this.handleCloseModal}>
           <Modal isClicked={this.state.isClicked} />
         </ReactModal>
         {this.props.restaurants && (

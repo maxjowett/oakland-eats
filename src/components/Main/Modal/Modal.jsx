@@ -1,5 +1,7 @@
 import React from 'react';
+import { Icon } from '../../../assets/Slice 1.png';
 
+import { anotherIcon } from '../../../assets/fork-and-knife_1f374.png';
 const Modal = props => {
   return (
     <React.Fragment>
@@ -10,6 +12,7 @@ const Modal = props => {
         </p>
       </div>
       <div className="modal__info">
+        <img src={anotherIcon} alt="Oaklandish" />
         <div className="modal__info-left">
           <h2 className="modal__contact">
             {props.isClicked.location.address1}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
 
 body {
   margin: 0;
@@ -9,17 +9,6 @@ body {
   grid-template-columns: 1fr 2fr;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: normal;
-  color: #fff;
-  scrollbar-color: auto;
-}
-
-::-webkit-scrollbar {
-  background-color: #333;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #444;
-  border-radius: 8px;
 }
 
 @media screen and (max-width: 480px) {
