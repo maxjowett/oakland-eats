@@ -5,10 +5,17 @@
 
 .restaurant {
   padding-left: 16px;
+  margin: 16px;
+  font-family: 'Fira Sans';
+  border: #c8d7d4 solid 2px;
+  border-radius: 8px;
+  background-image: url('../../assets/oakland.png');
+  background-position: bottom -30px right -20px;
+  background-repeat: no-repeat;
 }
 .restaurant__title {
-  font-size: 30px;
-  letter-spacing: 0.5px;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 32px;
   margin-bottom: 0px;
 }
 
@@ -21,7 +28,8 @@
 .restaurant__phone {
   font-size: 16px;
   font-weight: normal;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
 }
 
 .restaurant__info {

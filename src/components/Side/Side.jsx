@@ -10,14 +10,14 @@ class Side extends Component {
         <h3 className="restaurant__category">
           {restaurant.categories[0].title}
         </h3>
-        <h3 className="restaurant__phone">
-          {restaurant.display_phone}
-        </h3>
         <h3 className="restaurant__info">
           {restaurant.location.display_address[0]}
         </h3>
         <h3 className="restaurant__info">
           {restaurant.location.display_address[1]}
+        </h3>
+        <h3 className="restaurant__phone">
+          {restaurant.display_phone}
         </h3>
       </div>
     ));
