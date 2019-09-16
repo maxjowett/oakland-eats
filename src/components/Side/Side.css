@@ -1,14 +1,13 @@
 .side {
   height: 100vh;
   overflow: auto;
+  background-color: #25282b;
 }
 
 .restaurant {
   padding-left: 16px;
 }
 .restaurant__title {
-  font-family: 'Playfair Display';
-  font-weight: 900;
   font-size: 30px;
   letter-spacing: 0.5px;
   margin-bottom: 0px;
