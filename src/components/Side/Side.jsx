@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Side.css';
+import Footer from './Footer/Footer.jsx';
 
 class Side extends Component {
   state = {};
@@ -10,7 +11,8 @@ class Side extends Component {
           <a
             className="restaurant__a"
             href={restaurant.url}
-            target="_blank">
+            target="_blank"
+            rel="noopener noreferrer">
             {restaurant.name}
           </a>
         </h2>
@@ -33,6 +35,7 @@ class Side extends Component {
     return (
       <div className="side">
         {this.props.restaurants && this.renderRestaurants()}
+        {this.props.restaurants && <Footer />}
       </div>
     );
   }

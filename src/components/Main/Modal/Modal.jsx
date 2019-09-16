@@ -36,7 +36,8 @@ const Modal = props => {
           <a
             className="yelp"
             href={props.isClicked.url}
-            target="_blank">
+            target="_blank"
+            rel="noopener noreferrer">
             Yelp
           </a>
         </h1>

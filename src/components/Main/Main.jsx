@@ -63,6 +63,7 @@ class Main extends Component {
       <div style={{ height: '100vh', width: '100%' }}>
         <ReactModal
           className="modal"
+          ariaHideApp={false}
           isOpen={this.state.isModalOpen}
           onRequestClose={this.handleCloseModal}>
           <Modal isClicked={this.state.isClicked} />
