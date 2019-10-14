@@ -10,6 +10,7 @@ const config = {
     Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
   }
 };
+
 class App extends Component {
   state = {
     data: restaurants,
