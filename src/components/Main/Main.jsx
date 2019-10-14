@@ -77,7 +77,7 @@ class Main extends Component {
             onChildMouseEnter={this.onChildMouseEnter}
             onChildMouseLeave={this.onChildMouseLeave}
             onChildClick={this.onChildClick}
-            hoverSize={20}>
+            hoverSize={25}>
             {this.renderMarkers()}
           </GoogleMapReact>
         )}
