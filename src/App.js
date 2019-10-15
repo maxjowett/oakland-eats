@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import restaurants from './data.js';
 import Side from './components/Side/Side.jsx';
@@ -11,7 +13,17 @@ const config = {
   }
 };
 
+//toast.configure({
+//position: 'bottom-right',
+//autoClose: false
+//});
+
 class App extends Component {
+  notify = () =>
+    toast(
+      '⚠️ If you are having trouble clicking the pins, try clicking the top of the pin!'
+    );
+
   state = {
     data: restaurants,
     restaurants: null
@@ -19,6 +31,7 @@ class App extends Component {
 
   componentDidMount() {
     this.callYelp();
+    this.notify();
   }
 
   callYelp = () => {
@@ -40,6 +53,12 @@ class App extends Component {
       <div className="App">
         <Side restaurants={this.state.restaurants} />
         <Main restaurants={this.state.restaurants} />
+        <ToastContainer
+          position="bottom-right"
+          autoClose={false}
+          className="toast"
+          toastClassName="toast__body"
+        />
       </div>
     );
   }
