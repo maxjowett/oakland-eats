@@ -6,6 +6,7 @@ import './App.css';
 import restaurants from './data.js';
 import Side from './components/Side/Side.jsx';
 import Main from './components/Main/Main.jsx';
+import WarningIcon from './assets/warning-sign_26a0.png';
 
 const config = {
   headers: {
@@ -13,15 +14,18 @@ const config = {
   }
 };
 
-//toast.configure({
-//position: 'bottom-right',
-//autoClose: false
-//});
-
 class App extends Component {
   notify = () =>
     toast(
-      '⚠️ If you are having trouble clicking the pins, try clicking the top of the pin!'
+      <div className="toast__body">
+        <div className="toast__body-left">
+          <img src={WarningIcon} height="32" />
+        </div>
+        <div className="toast__body-right">
+          If you are having trouble clicking the pins, try clicking the top of
+          the pin!
+        </div>
+      </div>
     );
 
   state = {
@@ -55,9 +59,8 @@ class App extends Component {
         <Main restaurants={this.state.restaurants} />
         <ToastContainer
           position="bottom-right"
-          autoClose={false}
+          autoClose={15000}
           className="toast"
-          toastClassName="toast__body"
         />
       </div>
     );

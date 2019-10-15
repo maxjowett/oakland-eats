@@ -11,16 +11,21 @@ body {
   font-weight: normal;
 }
 
-.toast {
-  /*border: 2px solid black;*/
-  /*margin: 16px;*/
+.toast__body {
+  background-color: inherit;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  margin: 8px;
+  color: #222;
+  font-family: 'Fira Sans', Helvetica, sans-serif !important;
 }
 
-.toast__body {
-  color: #222;
-  font-family: 'Helvetica Neue', Helvetica, sans-serif !important;
-  border: 2px solid black;
-  border-radius: 8px;
+.toast__body-left {
+  align-self: center;
+}
+
+.toast__body-right {
+  align-self: center;
 }
 
 @media screen and (max-width: 480px) {
