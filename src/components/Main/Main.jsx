@@ -16,8 +16,8 @@ class Main extends Component {
 
   static defaultProps = {
     center: {
-      lat: 37.8044,
-      lng: -122.2712
+      lat: 37.8131444,
+      lng: -122.2901131
     },
     zoom: 13
   };
