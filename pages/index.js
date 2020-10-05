@@ -1,14 +1,9 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
-const Home = () => {
-  return (
-    <div className="g__container">
-      <div className={styles.home}>
-        <h1>Oakland Eats</h1>
-      </div>
-    </div>
-  );
-};
+const DynamicComponentWithNoSSR = dynamic(() => import('../components/Map.js'), {
+    ssr: false
+});
 
-export default Home;
+export default DynamicComponentWithNoSSR;
